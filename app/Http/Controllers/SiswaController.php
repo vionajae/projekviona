@@ -19,4 +19,5 @@ class SiswaController extends Controller
         }
         return back()->with('pesan','nisn dan nama tidak terdaftar hyung noona');
     }
+    
 }

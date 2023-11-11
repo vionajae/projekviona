@@ -24,8 +24,20 @@ Route::get('LayoutUtama',[AdminController::class,'LayoutUtama']);
 Route::get('admin/login',[AdminController::class,'adminlogin']);
 Route::post('admin/login',[AdminController::class,'cekadminlogin']);
 
+Route::get('admin/datasiswa',[AdminController::class,'datasiswa']);
+Route::post('admin/datasiswa',[AdminController::class,'cekDatasiswa']);
+
+Route::get('admin/datapetugas',[AdminController::class,'datapetugas']);
+Route::post('admin/datapetugas',[AdminController::class,'cekDatapetugas']);
+
+Route::get('admin/transaksi',[AdminController::class,'transaksi']);
+Route::post('admin/transaksi',[AdminController::class,'cekTransaksi']);
+
+Route::get('admin/datakelas',[AdminController::class,'datakelas']);
+
+Route::get('admin/dataspp',[AdminController::class,'dataspp']);
+
 //siswa
 Route::get('siswa/login',[SiswaController::class,'login']);
 Route::post('siswa/login',[SiswaController::class,'cekLogin']);
 
-Route::get('siswa/histori',[SiswaController::class,'siswa']);
