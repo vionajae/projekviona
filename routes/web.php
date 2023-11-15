@@ -23,6 +23,7 @@ Route::get('LayoutUtama',[AdminController::class,'LayoutUtama']);
 
 Route::get('admin/login',[AdminController::class,'adminlogin']);
 Route::post('admin/login',[AdminController::class,'cekadminlogin']);
+Route::post('idk',[AdminController::class,'cekadminlogin']);
 
 Route::get('admin/datasiswa',[AdminController::class,'datasiswa']);
 Route::post('admin/datasiswa',[AdminController::class,'cekDatasiswa']);

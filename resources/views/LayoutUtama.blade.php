@@ -41,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{url('admin/login')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -51,7 +51,6 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-		<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
@@ -158,7 +157,7 @@
 				<div class="col-md-5">
 						<div class="panel panel-default">
 						<div class="panel-heading">
-							Line Chart Pembayaran Spp
+							Line Chart
 						</div>
 						<div class="panel-body">
 							<div id="morris-line-chart"></div>
@@ -169,7 +168,7 @@
 						<div class="col-md-7">
 					<div class="panel panel-default">
 					<div class="panel-heading">
-                                Bar Chart Pembayaran Spp
+                                Bar Chart Example
                             </div>
                             <div class="panel-body">
                                 <div id="morris-bar-chart"></div>
@@ -179,11 +178,14 @@
 					</div>
 					
 				</div> 
+			 
+				
+			
 		<div class="row">
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Siswa</h4>
+						<h4>Customers</h4>
 						<div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
 						</div>
 					</div>
@@ -192,7 +194,7 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Belum Membayar</h4>
+						<h4>Sales</h4>
 						<div class="easypiechart" id="easypiechart-orange" data-percent="55" ><span class="percent">55%</span>
 						</div>
 					</div>
@@ -201,7 +203,7 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Sudah Membayar</h4>
+						<h4>Profits</h4>
 						<div class="easypiechart" id="easypiechart-teal" data-percent="84" ><span class="percent">84%</span>
 						</div>
 					</div>
@@ -210,14 +212,15 @@
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body easypiechart-panel">
-						<h4>Admin</h4>
+						<h4>No. of Visits</h4>
 						<div class="easypiechart" id="easypiechart-red" data-percent="46" ><span class="percent">46%</span>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-        <!--/.row-->
+		</div><!--/.row-->
+			
+				
                 <div class="row">
                     <div class="col-md-9 col-sm-12 col-xs-12">
                         <div class="panel panel-default">                            
@@ -232,7 +235,7 @@
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Donut Chart
+                                Donut Chart Example
                             </div>
                             <div class="panel-body">
                                 <div id="morris-donut-chart"></div>
@@ -243,15 +246,9 @@
                 </div>
 				<div class="row">
 				<div class="col-md-12">
-				
 					</div>		
 				</div> 	
                 <!-- /. ROW  -->
-
-	   
-				
-				
-				
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="panel panel-default">

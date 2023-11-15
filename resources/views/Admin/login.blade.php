@@ -26,7 +26,7 @@
                       </div>
                     @endif
 
-                    <form action="{{url('admin/login')}}" method="post">
+                    <form action="{{url('idk')}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
