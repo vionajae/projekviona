@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Spp</title>
+    <title>Histori Pembayaran</title>
 	<!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="wrapper">
-       <nav class="navbar navbar-default top-navbar" role="navigation">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="  navbar-brand" href="{{url('LayoutUtama')}}"><strong>Bayarin</strong></a>
+                <a class="navbar-brand" href="{{url('LayoutUtama')}}"><strong>Bayarin</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -87,7 +87,7 @@
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                            Data Spp
+                            Histori Pembayaran
                         </h1>
 						
 									
@@ -100,23 +100,37 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Tabel Data Spp
+                             Tabel Histori Pembayaran
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+                                            <th>Id Petugas</th>
+                                            <th>NISN</th>
+                                            <th>Tanggal Bayar</th>
+                                            <th>Bulan Dibayar</th>
+                                            <th>Tahun Dibayar</th>
                                             <th>Id Spp</th>
-                                            <th>Tahun</th>
-                                            <th>Nominal</th>
+                                            <th>Jumlah Bayar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        @foreach ($data as $inem)
+                                <tr>
+                                    <td>{{$inem->id_petugas}}</td>
+                                    <td>{{$inem->nisn}}</td>
+                                    <td>{{$inem->tgl_bayar}}</td>
+                                    <td>{{$inem->bulan_dibayar}}</td>
+                                    <td>{{$inem->tahun_dibayar}}</td>
+                                    <td>{{$inem->id_spp}}</td>
+                                    <td>{{$inem->jumlah_bayar}}</td>
+                                </tr>
+                                @endforeach
                                     </tbody>
                                 </table>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                     <!--End Advanced Tables -->
@@ -124,6 +138,7 @@
             </div>
         </div>
     </div>
+             <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
      <!-- /. WRAPPER  -->

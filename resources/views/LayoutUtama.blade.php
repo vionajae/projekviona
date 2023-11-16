@@ -68,13 +68,13 @@
                     </li>
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Data Spp</a>
+                        <a class="table.html" href="{{url('admin/dataspp')}}"><i class="fa fa-table"></i> Data Spp</a>
                     </li>
                     <li>
                         <a class="form.html" href="{{url('admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
                     </li>
                     <li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
+                        <a class="chart.html" href="{{url('admin/histori')}}"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
                     </li>
                     <li>
                         <a href="ui-elements.html"><i class="fa fa-desktop"></i> Laporan</a>
@@ -90,9 +90,9 @@
       
 		<div id="page-wrapper">
 		    <div class="header">
-                <h3 class="page-header">
+                <h1 class="page-header">
                     Dashboard
-                </h3>
+                </h1>
 						
 									
 		</div>
@@ -153,101 +153,6 @@
                         </div>
                     </div>
                 </div>
-				<div class="row">
-				<div class="col-md-5">
-						<div class="panel panel-default">
-						<div class="panel-heading">
-							Line Chart
-						</div>
-						<div class="panel-body">
-							<div id="morris-line-chart"></div>
-						</div>						
-					</div>   
-					</div>		
-					
-						<div class="col-md-7">
-					<div class="panel panel-default">
-					<div class="panel-heading">
-                                Bar Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                            </div>
-						
-					</div>  
-					</div>
-					
-				</div> 
-			 
-				
-			
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Customers</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Sales</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="55" ><span class="percent">55%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Profits</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="84" ><span class="percent">84%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>No. of Visits</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="46" ><span class="percent">46%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-			
-				
-                <div class="row">
-                    <div class="col-md-9 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">                            
-							<div class="panel-heading">
-							Area Chart
-						</div>
-						<div class="panel-body">
-							<div id="morris-area-chart"></div>
-						</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Donut Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-				<div class="row">
-				<div class="col-md-12">
-					</div>		
-				</div> 	
                 <!-- /. ROW  -->
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-12">
@@ -323,16 +228,11 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <!-- /. ROW  -->
             </div>
-            <!-- /. PAGE INNER  -->
         </div>
-        <!-- /. PAGE WRAPPER  -->
     </div>
-    <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="/assets/js/jquery-1.10.2.js"></script>

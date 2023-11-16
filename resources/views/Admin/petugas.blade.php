@@ -1,25 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Spp</title>
+    <title>Tambah Petugas</title>
 	<!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
     <link href="/assets/css/font-awesome.css" rel="stylesheet" />
-     <!-- Morris Chart Styles-->
-   
         <!-- Custom Styles-->
     <link href="/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-     <!-- TABLE STYLES-->
-    <link href="/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
-       <nav class="navbar navbar-default top-navbar" role="navigation">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -87,45 +83,70 @@
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                            Data Spp
+                             Tambah Petugas
                         </h1>
-						
-									
+
 		</div>
-		
+            <form action="{{url('admin/petugas')}}" method="post">
+                @csrf
             <div id="page-inner"> 
-               
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
+              <div class="row">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Tabel Data Spp
+                            Tambah Petugas
                         </div>
+                        <div class="card-body">
+                            @if (session('pesan'))
+                                <div class="alert alert-primary" role="alert">
+                                    {{session('pesan')}}
+                                  </div>
+                                @endif
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Id Spp</th>
-                                            <th>Tahun</th>
-                                            <th>Nominal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                </table>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input type="text" class="form-control" name="username" placeholder="username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Petugas</label>
+                                            <input type="text" class="form-control" name="nama_petugas" placeholder="nama_petugas">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Level</label>
+                                            <select class="form-control">
+                                                <option>Admin</option>
+                                                <option>Petugas</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-default">Tambah</button>
+                                        <button class="btn btn-default" type="reset">Batal</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
+                            <!-- /.row (nested) -->
                         </div>
+                        <!-- /.panel-body -->
                     </div>
-                    <!--End Advanced Tables -->
+                    <!-- /.panel -->
                 </div>
+                <!-- /.col-lg-12 -->
             </div>
-        </div>
-    </div>
+			</div>
+             <!-- /. PAGE INNER  -->
             </div>
+        </form>
          <!-- /. PAGE WRAPPER  -->
+        </div>
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
@@ -134,15 +155,7 @@
     <script src="/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
     <script src="/assets/js/jquery.metisMenu.js"></script>
-     <!-- DATA TABLE SCRIPTS -->
-    <script src="/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="/assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
-         <!-- Custom Js -->
+      <!-- Custom Js -->
     <script src="/assets/js/custom-scripts.js"></script>
     
    

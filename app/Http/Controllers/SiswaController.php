@@ -17,7 +17,7 @@ class SiswaController extends Controller
             session(['nisn'=>$request->input('nisn')]);
             return redirect('/');
         }
-        return back()->with('pesan','nisn dan nama tidak terdaftar hyung noona');
+        return back()->with('pesan','nisn dan nama tidak terdaftar hyung noona yona');
     }
     
 }

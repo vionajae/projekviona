@@ -44,42 +44,41 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-            <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="main-menu">
-    
-                        <li>
-                            <a class="" href="{{url('LayoutUtama')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a class="ui-elements.html" href="{{url('admin/datasiswa')}}"><i class="fa fa-desktop"></i> Data Siswa</a>
-                        </li>
-                        <li>
-                            <a class="chart.html" href="{{url('admin/datapetugas')}}"><i class="fa fa-bar-chart-o"></i> Data Petugas</a>
-                        </li>
-                        <li>
-                            <a class="tab-panel.html" href="{{url('admin/datakelas')}}"><i class="fa fa-qrcode"></i> Data Kelas</a>
-                        </li>
-                        
-                        <li>
-                            <a class="table.html" href="{{url('admin/dataspp')}}"><i class="fa fa-table"></i> Data Spp</a>
-                        </li>
-                        <li>
-                            <a class="form.html" href="{{url('admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
-                        </li>
-                        <li>
-                            <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
-                        </li>
-                        <li>
-                            <a href="ui-elements.html"><i class="fa fa-desktop"></i> Laporan</a>
-                        </li>
-                            </ul>
-                        </li>
-                    </ul>
-    
-                </div>
-    
-            </nav>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="" href="{{url('LayoutUtama')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a class="ui-elements.html" href="{{url('admin/datasiswa')}}"><i class="fa fa-desktop"></i> Data Siswa</a>
+                    </li>
+					<li>
+                        <a class="chart.html" href="{{url('admin/datapetugas')}}"><i class="fa fa-bar-chart-o"></i> Data Petugas</a>
+                    </li>
+                    <li>
+                        <a class="tab-panel.html" href="{{url('admin/datakelas')}}"><i class="fa fa-qrcode"></i> Data Kelas</a>
+                    </li>
+                    
+                    <li>
+                        <a class="table.html" href="{{url('admin/dataspp')}}"><i class="fa fa-table"></i> Data Spp</a>
+                    </li>
+                    <li>
+                        <a class="form.html" href="{{url('admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
+                    </li>
+                    <li>
+                        <a class="chart.html" href="{{url('admin/histori')}}"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
+                    </li>
+                    <li>
+                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> Laporan</a>
+                    </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
