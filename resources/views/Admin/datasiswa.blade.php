@@ -113,6 +113,7 @@
                                             <th>Alamat</th>
                                             <th>Telepon</th>
                                             <th>Id Spp</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -125,6 +126,10 @@
                                     <td>{{$inem->alamat}}</td>
                                     <td>{{$inem->no_telp}}</td>
                                     <td>{{$inem->id_spp}}</td>
+                                    <td>
+                                        <button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
+                                        <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                    </td>
                                 </tr>
                                 @endforeach
                                     </tbody>

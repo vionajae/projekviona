@@ -38,7 +38,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw" href="{{url('logout')}}"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -110,6 +110,7 @@
                                             <th>Id Kelas</th>
                                             <th>Nama Kelas</th>
                                             <th>Kompetensi Keahlian</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -118,6 +119,10 @@
                                         <td>{{$inem->id_kelas}}</td>
                                         <td>{{$inem->nama_kelas}}</td>
                                         <td>{{$inem->kompetensi_keahlian}}</td>
+                                        <td>
+											<button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
+											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>

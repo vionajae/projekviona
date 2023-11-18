@@ -6,6 +6,7 @@ use App\Models\Kelas;
 use App\Models\Pembayaran;
 use App\Models\Petugas;
 use App\Models\Siswa;
+use App\Models\Spp;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -92,10 +93,32 @@ class AdminController extends Controller
         $m->create($request->all());
     }
 
+    public function edit($username){
+        $m = new Petugas();
+        return view('edit.editpetugas',['data'=>$m->find($username)]);
+    }
+    public function update(Request $request,$username){
+        $validasi = $request->validate([
+            'username'=>'required',
+            'password'=>'required',
+            'nama_petugas'=>'required',            
+            'level'=>['admin','petugas']
+        ]);
+
+        $m = new Petugas();
+        $m = $m->find($username);
+        $m->update($request->all());
+        return redirect('admin.petugas');
+    }
+    public function hapus($username){
+        $m = new Petugas();
+        $m = $m->find($username);
+        $m->delete();
+        return redirect('admin.petugas');
+    }
     public function transaksi(){
         return view('admin.transaksi');
     }
-
     //tambah kelas
     public function tambahkelas(){
         return view('admin.tambahkelas');
@@ -125,7 +148,8 @@ class AdminController extends Controller
     }
 
     public function dataspp(){
-        return view('admin.dataspp');
+        $m = new Spp();
+        return view('admin.dataspp',['data'=>$m->all()]);
     }
 
     public function histori(){
@@ -146,4 +170,11 @@ class AdminController extends Controller
         $m->create($request->all());
         return back();
     }
+
+    public function logout(){
+        session()->flush();
+        return back();
+    }
 }
+
+

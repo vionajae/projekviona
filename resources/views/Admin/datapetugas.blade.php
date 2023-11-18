@@ -95,7 +95,8 @@
 		</div>
 		
             <div id="page-inner"> 
-               
+            <form action="" method="post">
+                @csrf
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -113,6 +114,7 @@
                                             <th>Password</th>
                                             <th>Nama Petugas</th>
                                             <th>Level</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -123,6 +125,10 @@
                                         <td>{{$inem->password}}</td>
                                         <td>{{$inem->nama_petugas}}</td>
                                         <td>{{$inem->level}}</td>
+                                        <td>
+											<a href="{{url('admin/edit/'.$inem->username)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>
@@ -135,6 +141,7 @@
                     <a class="btn btn-primary" href="{{url('admin/petugas')}}" role="button">Tambah</a>
                 </div>
             </div>
+        </form>
         </div>
     </div>
             </div>

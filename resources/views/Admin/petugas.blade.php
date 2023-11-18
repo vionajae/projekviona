@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Level</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="level">
                                                 <option>Admin</option>
                                                 <option>Petugas</option>
                                             </select>

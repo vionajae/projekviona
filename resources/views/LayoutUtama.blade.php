@@ -41,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="{{url('admin/login')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a class="fa fa-sign-out fa-fw" href="{{url('admin/logout')}}" role="button">Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -53,7 +53,6 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
                     <li>
                         <a class="" href="{{url('LayoutUtama')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
@@ -82,7 +81,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
 
         </nav>
