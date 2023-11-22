@@ -35,9 +35,8 @@ Route::get('admin/petugas',[AdminController::class,'petugas']);
 Route::post('admin/petugas',[AdminController::class,'cekPetugas']);
 Route::get('admin/datapetugas',[AdminController::class,'datapetugas']);
 Route::post('admin/datapetugas',[AdminController::class,'cekDatapetugas']);
-Route::get('admin/edit/{username}',[AdminController::class,'edit']);
-Route::post('admin/edit/{username}',[AdminController::class,'update']);
-Route::get('admin/hapus/{username}',[AdminController::class,'hapus']);
+Route::get('admin/edit/{id}',[AdminController::class,'edit']);
+Route::get('admin/hapus/{id}',[AdminController::class,'hapus']);
 
 Route::get('admin/transaksi',[AdminController::class,'transaksi']);
 Route::post('admin/transaksi',[AdminController::class,'cekTransaksi']);

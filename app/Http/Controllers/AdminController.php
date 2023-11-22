@@ -93,29 +93,17 @@ class AdminController extends Controller
         $m->create($request->all());
     }
 
-    public function edit($username){
+    public function edit($id){
         $m = new Petugas();
-        return view('edit.editpetugas',['data'=>$m->find($username)]);
+        return view('edit.editpetugas',['data'=>$m->find($id)]);
     }
-    public function update(Request $request,$username){
-        $validasi = $request->validate([
-            'username'=>'required',
-            'password'=>'required',
-            'nama_petugas'=>'required',            
-            'level'=>['admin','petugas']
-        ]);
+    public function hapus($id){ 
+        $petugas = new Petugas(); 
+        $petugas = $petugas->find($id); 
+        $petugas->delete(); 
+        return back();
+    }
 
-        $m = new Petugas();
-        $m = $m->find($username);
-        $m->update($request->all());
-        return redirect('admin.petugas');
-    }
-    public function hapus($username){
-        $m = new Petugas();
-        $m = $m->find($username);
-        $m->delete();
-        return redirect('admin.petugas');
-    }
     public function transaksi(){
         return view('admin.transaksi');
     }
@@ -147,10 +135,34 @@ class AdminController extends Controller
         $m->create($request->all());
     }
 
+     //tambah spp
+     public function tambahspp(){
+        return view('admin.tambahspp');
+    }
+    public function cekTambahspp(Request $request){ 
+        $cek = $request->validate([
+            'tahun'=>'required',
+            'nominal'=>'required'
+        ]);
+        $m = new Spp();
+        $m->create($request->all());
+        return redirect('admin/dataspp');        
+    }
+    
     public function dataspp(){
         $m = new Spp();
         return view('admin.dataspp',['data'=>$m->all()]);
     }
+
+    public function cekDataspp(Request $request){
+        $m = new Spp();
+       $cek = $request->validate([
+           'tahun'=>'required',
+           'nominal'=>'required'            
+       ]);
+       $m->create($request->all());
+   }
+
 
     public function histori(){
         $m = new Siswa();

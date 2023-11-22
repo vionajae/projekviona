@@ -87,7 +87,7 @@
                         </h1>
 
 		</div>
-            <form action="{{url('admin/tambahkelas')}}" method="post">
+            <form action="{{url('admin/tambahspp')}}" method="post">
                 @csrf
             <div id="page-inner"> 
               <div class="row">

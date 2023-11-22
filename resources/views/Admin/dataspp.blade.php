@@ -38,7 +38,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw" href="{{url('logout')}}"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -100,7 +100,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Tabel Data Spp
+                             Tabel Data Kelas
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -110,6 +110,7 @@
                                             <th>Id Spp</th>
                                             <th>Tahun</th>
                                             <th>Nominal</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -119,10 +120,11 @@
                                         <td>{{$inem->tahun}}</td>
                                         <td>{{$inem->nominal}}</td>
                                         <td>
-											<button class="btn btn-primary"><i class="fa fa-edit"></i> Edit</button>
+											<button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
 											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

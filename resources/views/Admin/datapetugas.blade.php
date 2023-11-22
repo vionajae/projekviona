@@ -126,8 +126,8 @@
                                         <td>{{$inem->nama_petugas}}</td>
                                         <td>{{$inem->level}}</td>
                                         <td>
-											<a href="{{url('admin/edit/'.$inem->username)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
-											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+											<a href="{{url('admin/edit/'.$inem->id)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+											<a href="{{url('admin/hapus/'.$inem->id)}}" class="btn btn-danger btn-sm">Delete<i class="bi bi-trash-fill"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -164,7 +164,5 @@
     </script>
          <!-- Custom Js -->
     <script src="/assets/js/custom-scripts.js"></script>
-    
-   
 </body>
 </html>
