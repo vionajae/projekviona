@@ -93,7 +93,8 @@
 		</div>
 		
             <div id="page-inner"> 
-               
+                <form action="{{url('admin/datasiswa')}}" method="post">
+                    @csrf
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -127,8 +128,8 @@
                                     <td>{{$inem->no_telp}}</td>
                                     <td>{{$inem->id_spp}}</td>
                                     <td>
-                                        <button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
-                                        <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                        <a href="{{url('/admin/editsiswa/'.$inem->nisn)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                                            <a  href="{{url('/admin/hapussiswa/'.$inem->nisn)}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -139,10 +140,11 @@
                         </div>
                     </div>
                     <!--End Advanced Tables -->
-                    <a class="btn btn-primary" href="{{url('/admin/tambahsiswa')}}" role="button">Tambah</a>
+                    <a class="btn btn-primary" href="{{url('admin/tambah')}}" role="button">Tambah</a>
                 </div>
             </div>
         </div>
+    </form>
     </div>
              <!-- /. PAGE INNER  -->
             </div>

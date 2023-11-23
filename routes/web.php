@@ -26,16 +26,20 @@ Route::get('admin/login',[AdminController::class,'adminlogin']);
 Route::post('admin/login',[AdminController::class,'cekadminlogin']);
 Route::post('idk',[AdminController::class,'cekadminlogin']);
 
-Route::get('admin/tambahsiswa',[AdminController::class,'tambahsiswa']);
-Route::post('admin/tambahsiswa',[AdminController::class,'cekTambahsiswa']);
+Route::get('admin/tambah', [AdminController::class, 'tambahsiswa']);
+Route::get('admin/tambahsiswa', [AdminController::class, 'cekTambahsiswa']);
 Route::get('admin/datasiswa',[AdminController::class,'datasiswa']);
 Route::post('admin/datasiswa',[AdminController::class,'cekDatasiswa']);
+Route::get('admin/editsiswa/{id}',[AdminController::class,'editsiswa']);
+Route::post('admin/editsiswa/{id}',[AdminController::class,'updatesiswa']);
+Route::get('admin/hapussiswa/{id}',[AdminController::class,'hapussiswa']);
 
 Route::get('admin/petugas',[AdminController::class,'petugas']);
 Route::post('admin/petugas',[AdminController::class,'cekPetugas']);
 Route::get('admin/datapetugas',[AdminController::class,'datapetugas']);
 Route::post('admin/datapetugas',[AdminController::class,'cekDatapetugas']);
 Route::get('admin/edit/{id}',[AdminController::class,'edit']);
+Route::post('admin/edit/{id}',[AdminController::class,'update']);
 Route::get('admin/hapus/{id}',[AdminController::class,'hapus']);
 
 Route::get('admin/transaksi',[AdminController::class,'transaksi']);
@@ -45,6 +49,9 @@ Route::get('admin/tambahkelas',[AdminController::class,'tambahkelas']);
 Route::post('admin/tambahkelas',[AdminController::class,'cekTambahkelas']);
 Route::get('admin/datakelas',[AdminController::class,'datakelas']);
 Route::post('admin/datakelas',[AdminController::class,'cekDatakelas']);
+Route::get('admin/editkelas/{id}',[AdminController::class,'editkelas']);
+Route::post('admin/editkelas/{id}',[AdminController::class,'updatekelas']);
+Route::get('admin/hapuskelas/{id}',[AdminController::class,'hapuskelas']);
 
 Route::get('admin/tambahspp',[AdminController::class,'tambahspp']);
 Route::post('admin/tambahspp',[AdminController::class,'cekTambahspp']);

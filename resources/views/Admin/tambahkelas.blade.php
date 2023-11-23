@@ -109,10 +109,20 @@
                                         <div class="form-group">
                                             <label>Nama Kelas</label>
                                             <input type="text" class="form-control" name="nama_kelas" placeholder="Nama Kelas">
+                                            @error('nama_kelas')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Kompetensi Keahlian</label>
                                             <input type="text" class="form-control" name="kompetensi_keahlian" placeholder="Kompotensi Keahlian">
+                                            @error('kompetensi_keahlian')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                                         </div>
                                         <button class="btn btn-default">Tambah</button>
                                         <button class="btn btn-default" type="reset">Batal</button>

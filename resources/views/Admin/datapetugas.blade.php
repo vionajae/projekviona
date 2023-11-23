@@ -95,7 +95,7 @@
 		</div>
 		
             <div id="page-inner"> 
-            <form action="" method="post">
+            <form action="{{url('admin/datapetugas')}}" method="post">
                 @csrf
             <div class="row">
                 <div class="col-md-12">
@@ -126,8 +126,8 @@
                                         <td>{{$inem->nama_petugas}}</td>
                                         <td>{{$inem->level}}</td>
                                         <td>
-											<a href="{{url('admin/edit/'.$inem->id)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
-											<a href="{{url('admin/hapus/'.$inem->id)}}" class="btn btn-danger btn-sm">Delete<i class="bi bi-trash-fill"></i></a>
+											<a href="{{url('/admin/edit/'.$inem->id_petugas)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                                            <a  href="{{url('/admin/hapus/'.$inem->id_petugas)}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

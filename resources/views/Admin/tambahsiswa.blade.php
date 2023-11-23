@@ -84,7 +84,7 @@
                              Tambah Siswa
                         </h1>
 		</div>
-            <form action="{{url('admin/tambahsiswa')}}" method="post">
+            <form action="{{url('admin/tambahsiswa')}}" method="get">
                 @csrf
             <div id="page-inner"> 
               <div class="row">
@@ -109,7 +109,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>NIS</label>
-                                            <input type="text" class="form-control" name="password" placeholder="NIS">
+                                            <input type="text" class="form-control" name="nis" placeholder="NIS">
                                         </div>
                                         <div class="form-group">
                                             <label>Nama</label>

@@ -26,7 +26,7 @@
                       </div>
                     @endif
 
-                    <form action="{{url('masyarakat/login')}}" method="post">
+                    <form action="{{url('siswa/login')}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="nisn" class="form-label">Nisn</label>

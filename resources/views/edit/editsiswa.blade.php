@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tambah Petugas</title>
+    <title>Edit Siswa</title>
 	<!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -75,26 +75,23 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                             Tambah Petugas
+                            Edit Siswa
                         </h1>
-
 		</div>
-            <form action="{{url('admin/petugas')}}" method="post">
+            <form action="{{url('/admin/editsiswa/'.$data->nisn)}}" method="post">
                 @csrf
             <div id="page-inner"> 
               <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tambah Petugas
+                            Edit Siswa
                         </div>
                         <div class="card-body">
                             @if (session('pesan'))
@@ -107,45 +104,34 @@
                                 <div class="col-lg-12">
                                     <form role="form">
                                         <div class="form-group">
-                                            <label>Username</label>
-                                            <input type="text" class="form-control" name="username" placeholder="Username">
-                                            @error('username')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>NISN</label>
+                                            <input type="text" class="form-control" name="nisn" value="{{$data->nisn}}"  placeholder="NISN">
                                         </div>
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Password">
-                                            @error('password')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>NIS</label>
+                                            <input type="text" class="form-control" name="nis" value="{{$data->nis}}"  placeholder="NIS">
                                         </div>
                                         <div class="form-group">
-                                            <label>Nama Petugas</label>
-                                            <input type="text" class="form-control" name="nama_petugas" placeholder="Nama Petugas">
-                                            @error('nama_petugas')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" name="nama" value="{{$data->nama}}"  placeholder="Nama">
                                         </div>
                                         <div class="form-group">
-                                            <label>Level</label>
-                                            <select class="form-control" name="level">
-                                                <option>Admin</option>
-                                                <option>Petugas</option>
-                                            </select>
-                                            @error('level')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Id Kelas</label>
+                                            <input type="text" class="form-control" name="id_kelas" value="{{$data->id_kelas}}"  placeholder="Id Kelas">
                                         </div>
-                                        <button class="btn btn-default">Tambah</button>
+                                        <div class="form-group">
+                                            <label>Alamat</label>
+                                            <input type="text" class="form-control" name="alamat" value="{{$data->alamat}}"  placeholder="Alamat">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>No Telepon</label>
+                                            <input type="text" class="form-control" name="no_telp" value="{{$data->no_telp}}"  placeholder="No Telepon">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Id Spp</label>
+                                            <input type="text" class="form-control" name="id_spp" value="{{$data->id_spp}}"  placeholder="Id Spp">
+                                        </div>
+                                        <button class="btn btn-default">Edit</button>
                                         <button class="btn btn-default" type="reset">Batal</button>
                                     </form>
                                 </div>

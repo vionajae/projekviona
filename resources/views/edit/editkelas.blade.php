@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tambah Petugas</title>
+    <title>Edit Kelas</title>
 	<!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -83,18 +83,18 @@
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                             Tambah Petugas
+                            Edit Kelas
                         </h1>
 
 		</div>
-            <form action="{{url('admin/petugas')}}" method="post">
+            <form action="{{url('/admin/editkelas/'.$data->id_kelas)}}" method="post">
                 @csrf
             <div id="page-inner"> 
               <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tambah Petugas
+                            Edit Kelas
                         </div>
                         <div class="card-body">
                             @if (session('pesan'))
@@ -107,45 +107,14 @@
                                 <div class="col-lg-12">
                                     <form role="form">
                                         <div class="form-group">
-                                            <label>Username</label>
-                                            <input type="text" class="form-control" name="username" placeholder="Username">
-                                            @error('username')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Nama Kelas</label>
+                                            <input type="text" class="form-control" name="nama_kelas" value="{{$data->nama_kelas}}" placeholder="Nama Kelas">
                                         </div>
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Password">
-                                            @error('password')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Kompetensi Keahlian</label>
+                                            <input type="text" class="form-control" name="kompetensi_keahlian" value="{{$data->kompetensi_keahlian}}" placeholder="Kompotensi Keahlian">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Nama Petugas</label>
-                                            <input type="text" class="form-control" name="nama_petugas" placeholder="Nama Petugas">
-                                            @error('nama_petugas')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Level</label>
-                                            <select class="form-control" name="level">
-                                                <option>Admin</option>
-                                                <option>Petugas</option>
-                                            </select>
-                                            @error('level')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <button class="btn btn-default">Tambah</button>
+                                        <button class="btn btn-default">Edit</button>
                                         <button class="btn btn-default" type="reset">Batal</button>
                                     </form>
                                 </div>

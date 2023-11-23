@@ -94,7 +94,8 @@
 		</div>
 		
             <div id="page-inner"> 
-               
+            <form action="{{url('admin/datakelas')}}" method="post">
+            @csrf
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -120,8 +121,8 @@
                                         <td>{{$inem->nama_kelas}}</td>
                                         <td>{{$inem->kompetensi_keahlian}}</td>
                                         <td>
-											<button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
-											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+											<a href="{{url('/admin/editkelas/'.$inem->id_kelas)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                                            <a  href="{{url('/admin/hapuskelas/'.$inem->id_kelas)}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -133,8 +134,11 @@
                     <!--End Advanced Tables -->
                     <a class="btn btn-primary" href="{{url('admin/tambahkelas')}}" role="button">Tambah</a>
                 </div>
+            
             </div>
+            </form>
         </div>
+    </form>
     </div>
             </div>
          <!-- /. PAGE WRAPPER  -->

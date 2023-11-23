@@ -67,7 +67,7 @@
                     </li>
                     
                     <li>
-                        <a class="table.html" href="{{url('admin/dataspp')}}"><i class="fa fa-table"></i> Data Spp</a>
+                        <a class="table.html" href="{{url('admin/dataspp')}}" ><i class="fa fa-table"></i> Data Spp </a>
                     </li>
                     <li>
                         <a class="form.html" href="{{url('admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
@@ -185,7 +185,7 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Responsive Table Example
+                                Data Kelas
                             </div> 
                             <div class="panel-body">
                                 <div class="table-responsive">
