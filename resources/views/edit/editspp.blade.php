@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tambah Siswa</title>
+    <title>Edit Spp</title>
 	<!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -61,23 +61,26 @@
                         </ul>
                     </li>
                 </ul>
+
             </div>
+
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                             Tambah Siswa
+                            Edit Spp
                         </h1>
+
 		</div>
-            <form action="{{url('admin/tambahsiswa')}}" method="get">
+        <form action="{{url('/admin/editspp/'.$data->id_spp)}}" method="post">
                 @csrf
             <div id="page-inner"> 
               <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tambah Siswa
+                            Edit Spp
                         </div>
                         <div class="card-body">
                             @if (session('pesan'))
@@ -90,69 +93,14 @@
                                 <div class="col-lg-12">
                                     <form role="form">
                                         <div class="form-group">
-                                            <label>NISN</label>
-                                            <input type="text" class="form-control" name="nisn" placeholder="NISN">
-                                            @error('nisn')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Tahun</label>
+                                            <input type="text" class="form-control" name="tahun" value="{{$data->tahun}}" placeholder="Tahun">
                                         </div>
                                         <div class="form-group">
-                                            <label>NIS</label>
-                                            <input type="text" class="form-control" name="nis" placeholder="NIS">
-                                            @error('nis')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
+                                            <label>Nominal</label>
+                                            <input type="text" class="form-control" name="nominal" value="{{$data->nominal}}" placeholder="Nominal">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Nama</label>
-                                            <input type="text" class="form-control" name="nama" placeholder="Nama">
-                                            @error('nama')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Id Kelas</label>
-                                            <input type="text" class="form-control" name="id_kelas" placeholder="Id Kelas">
-                                            @error('id_kelas')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Alamat</label>
-                                            <input type="text" class="form-control" name="alamat" placeholder="Alamat">
-                                            @error('alamat')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label>No Telepon</label>
-                                            <input type="text" class="form-control" name="no_telp" placeholder="No Telepon">
-                                            @error('no_telp')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Id Spp</label>
-                                            <input type="text" class="form-control" name="id_spp" placeholder="Id Spp">
-                                            @error('id_spp')
-                                <div class="form-text">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                                        </div>
-                                        <button class="btn btn-default">Tambah</button>
+                                        <button class="btn btn-default">Edit</button>
                                         <button class="btn btn-default" type="reset">Batal</button>
                                     </form>
                                 </div>

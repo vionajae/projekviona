@@ -12,8 +12,23 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function LayoutUtama(){
-        return view('LayoutUtama');
+        $m = new Siswa();
+        return view('LayoutUtama',['data'=>$m->all()]);
     }
+    public function cekLayoutUtama(Request $request){
+        $m = new Siswa();
+       $cek = $request->validate([
+           'nisn'=>'required',
+           'nis'=>'required',            
+           'nama'=>'required',             
+           'id_kelas'=>'required',             
+           'alamat'=>'required',             
+           'no_telp'=>'required',             
+           'id_spp'=>'required'
+       ]);
+       $m->create($request->all());
+   }
+
     
     public function adminlogin(){
         return view('admin.login');
@@ -45,7 +60,7 @@ class AdminController extends Controller
             'no_telp' => $request->no_telp,
             'id_spp' => $request->id_spp,
         ]);
-    
+        
         return redirect('admin/datasiswa');
     }
     //tabel
@@ -151,9 +166,25 @@ class AdminController extends Controller
         return back();
     }
 
+    //tabel
     public function transaksi(){
         return view('admin.transaksi');
     }
+    public function cekTransaksi(Request $request){
+        $cek = $request->validate([
+            'id_petugas'=>'required',
+            'nisn'=>'required',
+            'tgl_bayar'=>'required',
+            'bulan_dibayar'=>'required',
+            'tahun_dibayar'=>'required',
+            'id_spp'=>'required',
+            'jumlah_bayar'=>'required'
+        ]);
+        $m = new Pembayaran();
+        $m->create($request->all());
+        return back()->with('pesan','Selamat, transaksi berhasil');
+    }
+    
     //tambah kelas
     public function tambahkelas(){
         return view('admin.tambahkelas');
@@ -233,23 +264,46 @@ class AdminController extends Controller
        ]);
        $m->create($request->all());
    }
+   public function editspp($id){
+    $m = new Spp();
+    return view('edit.editspp',['data'=>$m->find($id)]);
+}
 
+public function updatespp(Request $request,$id){
+    $validasi = $request->validate([
+        //     'tahun'=>'required',
+        //    'nominal'=>'required' 
+    ]);
 
-    public function histori(){
-        $m = new Siswa();
-        return view('admin.histori',['data'=>$m->all()]);
-    }
+    $spp = new Spp();
+    $spp = $spp->find($id);
+    $spp->update($request->all());
+    return redirect('admin/dataspp');
+}
+
+public function hapusspp($id){ 
+    $spp = new Spp(); 
+    $spp = $spp->find($id); 
+    $spp->delete(); 
+    return back();
+}
+   
+public function historiadmin(){
+    $m = new Pembayaran();
+    return view('admin.histori',['data'=>$m->all()]);
+}
     public function cekhistoriAdmin(Request $request){
         $m = new Pembayaran();
         $cek = $request->validate([
             'id_petugas'=>'required',
-            'nisn'=>'unique',
-            'tgl_bayar'=>'unique',
-            'bulan_dibayar'=>'unique',
-            'tahun_dibayar'=>'unique',
-            'id_spp'=>'unique',
-            'jumlah_bayar'=>'unique'
+            'nisn'=>'required',
+            'tgl_bayar'=>'required',
+            'bulan_dibayar'=>'required',
+            'tahun_dibayar'=>'required',
+            'id_spp'=>'required',
+            'jumlah_bayar'=>'required'
         ]);
+        
         $m->create($request->all());
         return back();
     }

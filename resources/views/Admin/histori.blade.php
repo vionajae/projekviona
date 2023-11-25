@@ -38,7 +38,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a class="fa fa-sign-out fa-fw" href="{{url('/logout')}}" role="button">Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -94,7 +94,8 @@
 		</div>
 		
             <div id="page-inner"> 
-               
+                <form action="{{url('admin/histori')}}" method="post">
+                    @csrf
             <div class="row">
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
@@ -136,6 +137,7 @@
                     <!--End Advanced Tables -->
                 </div>
             </div>
+                </form>
         </div>
     </div>
              <!-- /. PAGE INNER  -->

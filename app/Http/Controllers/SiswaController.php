@@ -15,9 +15,13 @@ class SiswaController extends Controller
         // cek username dan password exist (ada) di tabel masyarakat
         if ($m->where('nisn',$request->input('nisn'))->where('nama',$request->input('nama'))->exists()){
             session(['nisn'=>$request->input('nisn')]);
-            return redirect('/');
+            return redirect('Dashboard');
         }
         return back()->with('pesan','nisn dan nama tidak terdaftar hyung noona yona');
+    }
+    public function logout(){
+        session()->flush();
+        return back();
     }
     
 }

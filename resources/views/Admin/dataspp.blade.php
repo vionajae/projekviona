@@ -38,7 +38,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw" href="{{url('logout')}}"></i> Logout</a>
+                        <li><a class="fa fa-sign-out fa-fw" href="{{url('/logout')}}" role="button">Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -120,8 +120,8 @@
                                         <td>{{$inem->tahun}}</td>
                                         <td>{{$inem->nominal}}</td>
                                         <td>
-											<button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button>
-											<button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+											<a href="{{url('/admin/editspp/'.$inem->id_spp)}}" type="button" class="btn btn-primary" ><i class="fa fa-edit"></i> Edit</a>
+                                            <a  href="{{url('/admin/hapusspp/'.$inem->id_spp)}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

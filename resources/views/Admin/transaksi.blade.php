@@ -46,7 +46,6 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
                     <li>
                         <a class="" href="{{url('LayoutUtama')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
@@ -61,7 +60,7 @@
                     </li>
                     
                     <li>
-                        <a class="table.html" href="{{url('admin/dataspp')}}"><i class="fa fa-table"></i> Data Spp</a>
+                        <a class="table.html" href="{{url('admin/dataspp')}}" ><i class="fa fa-table"></i> Data Spp </a>
                     </li>
                     <li>
                         <a class="form.html" href="{{url('admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
@@ -75,7 +74,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
 
         </nav>
@@ -86,83 +84,108 @@
                              Transaksi Pembayaran
                         </h1>				
 		</div>
-		
-            <div id="page-inner"> 
-              <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Transaksi
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>NISN</label>
-                                            <input type="text" class="form-control" placeholder="NISN">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tanggal</label>
-                                            <input type="date" class="form-control" placeholder="Tanggal">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Kelas</label>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">X
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">XI
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">XII
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jurusan</label>
-                                            <select class="form-control">
-                                                <option>Rekayasa Perangkat Lunak</option>
-                                                <option>Teknik Kendaraan Ringan</option>
-                                                <option>Teknik Pemesinan</option>
-                                                <option>Akuntansi</option>
-                                            </select>
-                                        </div>
-                                        <button class="btn btn-default" type="submit">Bayar</button>
-                                        <button class="btn btn-default" type="reset">Batal</button>
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                <div class="col-lg-6">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>Id Spp</label>
-                                            <input type="text" class="form-control" placeholder="Id Spp">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jumlah Bayar</label>
-                                            <input type="text" class="form-control" placeholder="Jumlah Bayar">
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
+		@if (session('pesan'))
+                    <div class="alert alert-success" role="alert">
+                        {{session('pesan')}}
+                      </div>
+                    @endif
+        <form action="{{url('admin/transaksi')}}" method="post">
+            @csrf
+        <div id="page-inner"> 
+          <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Transaksi Pembayaran
                     </div>
-                    <!-- /.panel -->
+                    
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label>Id Petugas</label>
+                                        <input type="number" class="form-control" name="id_petugas" placeholder="Id Petugas">
+                                        @error('id_petugas')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>NISN</label>
+                                        <input type="text" class="form-control" name="nisn" placeholder="Nisn">
+                                        @error('nisn')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tanggal Bayar</label>
+                                        <input type="date" class="form-control" name="tgl_bayar" placeholder="Tanggal Bayar">
+                                        @error('tgl_bayar')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Bulan Dibayar</label>
+                                        <input type="text" class="form-control" name="bulan_dibayar" placeholder="Bulan Dibayar">
+                                        @error('bulan_dibayar')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tahun Dibayar</label>
+                                        <input type="text" class="form-control" name="tahun_dibayar" placeholder="Tahun Dibayar">
+                                        @error('tahun_dibayar')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Id Spp</label>
+                                        <input type="number" class="form-control" name="id_spp" placeholder="Id Spp">
+                                        @error('id_spp')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Jumlah Bayar</label>
+                                        <input type="number" class="form-control" name="jumlah_bayar" placeholder="Jumlah Bayar">
+                                        @error('jumlah_bayar')
+                            <div class="form-text">
+                                {{$message}}
+                            </div>
+                        @enderror
+                                    </div>
+                                    <button class="btn btn-default">Tambah</button>
+                                    <button class="btn btn-default" type="reset">Batal</button>
+                                </form>
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                            
+                            <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.col-lg-12 -->
+                <!-- /.panel -->
             </div>
-			</div>
-             <!-- /. PAGE INNER  -->
-            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        </div>
+         <!-- /. PAGE INNER  -->
+        </div>
+    </form>
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->

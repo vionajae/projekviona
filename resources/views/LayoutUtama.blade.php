@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="  navbar-brand" href="{{url('LayoutUtama')}}"><strong>Bayarin</strong></a>
+                <a class="navbar-brand" href="{{url('LayoutUtama')}}"><strong>Bayarin</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -41,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a class="fa fa-sign-out fa-fw" href="{{url('admin/logout')}}" role="button">Logout</a>
+                        <li><a class="fa fa-sign-out fa-fw" href="{{url('/logout')}}" role="button">Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -185,45 +185,38 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Data Kelas
-                            </div> 
+                                 Tabel Data Siswa
+                            </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th> No.</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>User Name</th>
-                                                <th>Email ID.</th>
+                                                <th>NISN</th>
+                                                <th>NIS</th>
+                                                <th>Nama</th>
+                                                <th>Id Kelas</th>
+                                                <th>Alamat</th>
+                                                <th>Telepon</th>
+                                                <th>Id Spp</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>John15482</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kimsila</td>
-                                                <td>Marriye</td>
-                                                <td>Kim1425</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Rossye</td>
-                                                <td>Nermal</td>
-                                                <td>Rossy1245</td>
-                                                <td>name@site.com</td>
-                                            </tr>
+                                            @foreach ($data as $inem)
+                                    <tr>
+                                        <td>{{$inem->nisn}}</td>
+                                        <td>{{$inem->nis}}</td>
+                                        <td>{{$inem->nama}}</td>
+                                        <td>{{$inem->id_kelas}}</td>
+                                        <td>{{$inem->alamat}}</td>
+                                        <td>{{$inem->no_telp}}</td>
+                                        <td>{{$inem->id_spp}}</td>
+                                    </tr>
+                                    @endforeach
                                         </tbody>
                                     </table>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
