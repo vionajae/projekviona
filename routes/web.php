@@ -72,9 +72,7 @@ Route::post('admin/histori',[AdminController::class,'cekhistoriAdmin']);
 Route::get('siswa/login',[SiswaController::class,'login']);
 Route::post('siswa/login',[SiswaController::class,'cekLogin']);
 
-Route::get('Dashboard', function () {
-    return view('siswa.Dashboard');
-});
+Route::get('Dashboard',[SiswaController::class,'Dashboard'])->middleware(SiswaMiddleware::class);
 
 //logout
 //logout

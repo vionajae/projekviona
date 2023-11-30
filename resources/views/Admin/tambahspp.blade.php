@@ -95,10 +95,20 @@
                                         <div class="form-group">
                                             <label>Tahun</label>
                                             <input type="text" class="form-control" name="tahun" placeholder="Tahun">
+                                            @error('tahun')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Nominal</label>
                                             <input type="text" class="form-control" name="nominal" placeholder="Nominal">
+                                            @error('nominal')
+                                <div class="form-text">
+                                    {{$message}}
+                                </div>
+                            @enderror
                                         </div>
                                         <button class="btn btn-default">Tambah</button>
                                         <button class="btn btn-default" type="reset">Batal</button>

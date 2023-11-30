@@ -23,5 +23,8 @@ class SiswaController extends Controller
         session()->flush();
         return back();
     }
+    public function Dashboard(){
+        return view('siswa.dashboard');
+    } 
     
 }

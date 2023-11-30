@@ -122,7 +122,7 @@ class AdminController extends Controller
         ]);
         $m = new Petugas();
         $m->create($request->all());
-        return redirect('admin/datapetugas');        
+        return redirect('admin/datapetugas');    
     }
     //tabel
     public function datapetugas(){

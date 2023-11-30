@@ -156,7 +156,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Tasks Panel
+                                Notifikasi
                             </div>
                             <div class="panel-body">
                                 <div class="list-group">

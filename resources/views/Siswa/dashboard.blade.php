@@ -55,7 +55,7 @@
                 <ul class="nav" id="main-menu">
                     
                     <li>
-                        <a class="chart.html" href="{{url('admin/histori')}}"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
+                        <a class="chart.html" href="{{url('siswa/histori')}}"><i class="fa fa-bar-chart-o"></i> Histori Pembayaran</a>
                     </li>
                     
                         </ul>
