@@ -166,7 +166,7 @@
                             </div>
                         @enderror
                                     </div>
-                                    <button class="btn btn-default">Tambah</button>
+                                    <button class="btn btn-default">Kirim</button>
                                     <button class="btn btn-default" type="reset">Batal</button>
                                 </form>
                             </div>

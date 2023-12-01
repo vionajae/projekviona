@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('petugas',function(Blueprint $table){
-            $table->integer('id_petugas');
+            $table->integer('id_petugas')->autoIncrement();
             $table->string('username',25);
             $table->string('password',32);
             $table->string('nama_petugas',35);
             $table->enum('level',['admin','petugas']);
             $table->timestamps();
-            $table->primary('id_petugas');
         });
     }
 
